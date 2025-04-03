@@ -33,7 +33,7 @@ func main() {
 	})
 
 	e.GET("/", func(c echo.Context) error {
-		panic("test panic") // This is just for testing, remove in production
+		// Removed intentional panic
 		return c.String(http.StatusOK, "Hello!")
 	})
 
