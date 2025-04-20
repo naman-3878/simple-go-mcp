@@ -1,21 +1,21 @@
-goroutine 35 [running]:
+goroutine 4 [running]:
 runtime/debug.Stack()
 	/usr/local/go/src/runtime/debug/stack.go:26 +0x64
 main.main.func1.1.1()
 	/Users/naman/mcp-demo/main.go:21 +0x48
-panic({0x104400340?, 0x104464560?})
+panic({0x102318da0?, 0x102522ac0?})
 	/usr/local/go/src/runtime/panic.go:785 +0x124
-main.main.func2({0x140000afa98?, 0x0?})
-	/Users/naman/mcp-demo/main.go:36 +0x2c
-github.com/labstack/echo/v4.(*Echo).add.func1({0x10446b8e8, 0x140000ca000})
+main.main.func2({0x10236f8e8, 0x140001bc000})
+	/Users/naman/mcp-demo/main.go:39 +0x28
+github.com/labstack/echo/v4.(*Echo).add.func1({0x10236f8e8, 0x140001bc000})
 	/Users/naman/go/pkg/mod/github.com/labstack/echo/v4@v4.13.3/echo.go:581 +0x50
-main.main.func1.1({0x10446b8e8?, 0x140000ca000?})
+main.main.func1.1({0x10236f8e8?, 0x140001bc000?})
 	/Users/naman/mcp-demo/main.go:31 +0x5c
-github.com/labstack/echo/v4.(*Echo).ServeHTTP(0x14000160248, {0x1044681d8, 0x140000a40e0}, 0x140000a0000)
+github.com/labstack/echo/v4.(*Echo).ServeHTTP(0x1400013a248, {0x10236c1d8, 0x140001920e0}, 0x1400018e000)
 	/Users/naman/go/pkg/mod/github.com/labstack/echo/v4@v4.13.3/echo.go:668 +0x304
-net/http.serverHandler.ServeHTTP({0x1400009a030?}, {0x1044681d8?, 0x140000a40e0?}, 0x6?)
+net/http.serverHandler.ServeHTTP({0x14000182030?}, {0x10236c1d8?, 0x140001920e0?}, 0x6?)
 	/usr/local/go/src/net/http/server.go:3210 +0xbc
-net/http.(*conn).serve(0x14000154360, {0x104468738, 0x1400011b860})
+net/http.(*conn).serve(0x14000130360, {0x10236c738, 0x14000103860})
 	/usr/local/go/src/net/http/server.go:2092 +0x4fc
 created by net/http.(*Server).Serve in goroutine 1
 	/usr/local/go/src/net/http/server.go:3360 +0x3dc
