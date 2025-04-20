@@ -33,7 +33,11 @@ func main() {
 	})
 
 	e.GET("/", func(c echo.Context) error {
-		// Removed the nil pointer dereference that was causing the panic
+		var x *int
+		x = new(int)
+		*x = 10
+		y := 0
+		fmt.Print(*x / y)
 		return c.String(http.StatusOK, "Hello!")
 	})
 
