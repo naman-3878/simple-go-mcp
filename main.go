@@ -19,7 +19,6 @@ func main() {
 			defer func() {
 				if r := recover(); r != nil {
 					stackTrace := string(debug.Stack())
-					// Store stack trace with timestamp
 					filename := fmt.Sprintf("panic_%d.txt", time.Now().Unix())
 					if err := os.WriteFile(filename, []byte(stackTrace), 0644); err != nil {
 						c.Logger().Errorf("Failed to write stack trace: %v", err)
@@ -33,11 +32,16 @@ func main() {
 	})
 
 	e.GET("/", func(c echo.Context) error {
-		// create some ppanic due to math
+		// Safe division with error handling
 		x := 10
 		y := 0
-		fmt.Print(x / y)
-		return c.String(http.StatusOK, "Hello!")
+		
+		if y == 0 {
+			return c.String(http.StatusBadRequest, "Error: Division by zero is not allowed")
+		}
+		
+		result := x / y
+		return c.String(http.StatusOK, fmt.Sprintf("Result: %d", result))
 	})
 
 	e.Logger.Fatal(e.Start(":8080"))
