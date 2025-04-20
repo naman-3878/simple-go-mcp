@@ -36,7 +36,7 @@ func main() {
 		var x *int
 		x = new(int)
 		*x = 10
-		y := 0
+		y := 2  // Changed from 0 to 2 to prevent division by zero
 		fmt.Print(*x / y)
 		return c.String(http.StatusOK, "Hello!")
 	})
