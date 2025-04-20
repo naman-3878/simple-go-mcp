@@ -33,11 +33,10 @@ func main() {
 	})
 
 	e.GET("/", func(c echo.Context) error {
-		var x *int
-		x = new(int)
-		*x = 10
-		y := 2  // Changed from 0 to 2 to prevent division by zero
-		fmt.Print(*x / y)
+		// create some ppanic due to math
+		x := 10
+		y := 0
+		fmt.Print(x / y)
 		return c.String(http.StatusOK, "Hello!")
 	})
 
